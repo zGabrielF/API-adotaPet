@@ -1,7 +1,7 @@
 package rotas
 
 import (
-	"adotaPet/src/controllers"
+	"apiAdotaPet/src/controllers"
 	"net/http"
 )
 

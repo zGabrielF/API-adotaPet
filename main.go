@@ -1,7 +1,7 @@
 package main
 
 import (
-	"adotaPet/src/router"
+	"apiAdotaPet/src/router"
 	"fmt"
 	"log"
 	"net/http"

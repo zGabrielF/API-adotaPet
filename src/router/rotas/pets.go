@@ -1,7 +1,7 @@
 package rotas
 
 import (
-	"adotaPet/src/controllers"
+	"apiAdotaPet/src/controllers"
 	"net/http"
 )
 
@@ -23,20 +23,20 @@ var rotasPets = []Rota{
 	},
 
 	{
-		URI:                "pets/{petID}",
+		URI:                "/pets/{petID}",
 		Metodo:             http.MethodGet,
 		Funcao:             controllers.BuscarPet,
 		RequerAutenticacao: false,
 	},
 
 	{
-		URI:                "pets/{petID}",
+		URI:                "/pets/{petID}",
 		Metodo:             http.MethodPut,
 		Funcao:             controllers.AtualizarPet,
 		RequerAutenticacao: false,
 	},
 	{
-		URI:                "pets/{petID}",
+		URI:                "/pets/{petID}",
 		Metodo:             http.MethodDelete,
 		Funcao:             controllers.DeletandoPet,
 		RequerAutenticacao: false,

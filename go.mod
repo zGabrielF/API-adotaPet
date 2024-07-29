@@ -1,4 +1,4 @@
-module adotaPet
+module apiAdotaPet
 
 go 1.22.2
 
