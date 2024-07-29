@@ -6,5 +6,5 @@ type Usuario struct {
 	Nick     string `json:"nick,omitempty"`
 	Senha    string `json:"senha,omitempty"`
 	Telefone string `json:"telefone,omitempty"`
-	Pets []Pet `json:"pets,omitempty"`
+	Pets     []Pet  `json:"pets,omitempty"`
 }

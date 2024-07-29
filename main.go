@@ -1,6 +1,7 @@
 package main
 
 import (
+	"apiAdotaPet/src/config"
 	"apiAdotaPet/src/router"
 	"fmt"
 	"log"
@@ -8,9 +9,8 @@ import (
 )
 
 func main() {
-	fmt.Println("rodando a API")
-
+	config.Carregar()
 	r := router.Gerar()
-
-	log.Fatal(http.ListenAndServe(":8080", r))
+	fmt.Printf("Rodando na porta %d", config.Porta)
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", config.Porta), r))
 }
