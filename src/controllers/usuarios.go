@@ -1,13 +1,45 @@
 package controllers
 
 import (
+	"apiAdotaPet/src/banco"
+	"apiAdotaPet/src/modelos"
+	"apiAdotaPet/src/repositorios"
+	"apiAdotaPet/src/respostas"
+	"encoding/json"
+	"io"
 	"net/http"
 )
 
 // Criar usuario
 
 func CriarUsuario(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("criando usuario"))
+	corpoRequisicao, erro := io.ReadAll(r.Body)
+	if erro != nil {
+		respostas.Erro(w, http.StatusUnprocessableEntity, erro)
+		return
+	}
+
+	var usuario modelos.Usuario
+	if erro = json.Unmarshal(corpoRequisicao, &usuario); erro != nil {
+		respostas.Erro(w, http.StatusBadRequest, erro)
+		return
+	}
+
+	db, erro := banco.Conectar()
+	if erro != nil {
+		respostas.Erro(w, http.StatusInternalServerError, erro)
+		return
+	}
+	defer db.Close()
+
+	repositorio := repositorios.RepositorioDeUsuarios(db)
+	usuario.ID, erro = repositorio.Criar(usuario)
+	if erro != nil {
+		respostas.Erro(w, http.StatusInternalServerError, erro)
+		return
+	}
+
+	respostas.JSON(w, http.StatusCreated, usuario)
 }
 
 // Buscar todos usuarios
