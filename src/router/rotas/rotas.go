@@ -1,6 +1,7 @@
 package rotas
 
 import (
+	"apiAdotaPet/src/middlewares"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -21,7 +22,8 @@ func Configurar(r *mux.Router) *mux.Router {
 	rotas = append(rotas, rotasPets...)
 
 	for _, rota := range rotas {
-		r.HandleFunc(rota.URI, rota.Funcao).Methods(rota.Metodo)
+		r.HandleFunc(rota.URI, middlewares.Logger(rota.Funcao)).Methods(rota.Metodo)
+
 	}
 	return r
 }

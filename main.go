@@ -2,6 +2,7 @@ package main
 
 import (
 	"apiAdotaPet/src/config"
+	"apiAdotaPet/src/middlewares"
 	"apiAdotaPet/src/router"
 	"fmt"
 	"log"
@@ -12,5 +13,5 @@ func main() {
 	config.Carregar()
 	r := router.Gerar()
 	fmt.Printf("Rodando na porta %d", config.Porta)
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", config.Porta), r))
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", config.Porta), middlewares.CORSHandler(r)))
 }
