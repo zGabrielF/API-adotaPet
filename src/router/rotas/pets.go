@@ -23,20 +23,20 @@ var rotasPets = []Rota{
 	},
 
 	{
-		URI:                "/pets/{petID}",
+		URI:                "/pets/{petId}",
 		Metodo:             http.MethodGet,
 		Funcao:             controllers.BuscarPet,
 		RequerAutenticacao: false,
 	},
 
 	{
-		URI:                "/pets/{petID}",
+		URI:                "/pets/{petId}",
 		Metodo:             http.MethodPut,
 		Funcao:             controllers.AtualizarPet,
 		RequerAutenticacao: false,
 	},
 	{
-		URI:                "/pets/{petID}",
+		URI:                "/pets/{petId}",
 		Metodo:             http.MethodDelete,
 		Funcao:             controllers.DeletandoPet,
 		RequerAutenticacao: false,
