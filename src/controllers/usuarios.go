@@ -28,7 +28,8 @@ func CriarUsuario(w http.ResponseWriter, r *http.Request) {
 		respostas.Erro(w, http.StatusBadRequest, erro)
 		return
 	}
-	if erro = usuario.Preparar(); erro != nil {
+
+	if erro = usuario.Preparar("cadastro"); erro != nil {
 		respostas.Erro(w, http.StatusBadRequest, erro)
 		return
 	}
@@ -60,6 +61,8 @@ func BuscarUsuarios(w http.ResponseWriter, r *http.Request) {
 		respostas.Erro(w, http.StatusInternalServerError, erro)
 		return
 	}
+	defer db.Close()
+
 	repositorio := repositorios.RepositorioDeUsuarios(db)
 	usuarios, erro := repositorio.Buscar(nomeOuNick)
 	if erro != nil {

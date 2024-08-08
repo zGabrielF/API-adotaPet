@@ -9,7 +9,7 @@ CREATE TABLE usuarios(
     nome varchar(50) not null,
     nick varchar(50) not null unique, 
     telefone varchar(50) not null,
-    senha varchar(50) not null
+    senha varchar(100) not null
 ) ENGINE = INNODB;
 
 CREATE TABLE pets(
