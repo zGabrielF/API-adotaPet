@@ -33,10 +33,13 @@ Segurança:
 -Verificação de Senha: A verificação de senha é feita comparando o hash armazenado com a senha fornecida durante o login.
 
 Roteamento e Autenticação
-As rotas da API são configuradas e organizadas de maneira modular, utilizando o pacote mux para roteamento.
-Cada rota é associada a um controlador, que manipula a lógica das requisições HTTP.
-O middleware de logger é aplicado para registrar as requisições feitas à API.
-As rotas são organizadas em duas partes principais: Usuários e Pets, com a possibilidade de adicionar mais funcionalidades, como autenticação e autorização, no futuro.
+-As rotas da API são configuradas e organizadas de maneira modular, utilizando o pacote mux para roteamento.
+
+-Cada rota é associada a um controlador, que manipula a lógica das requisições HTTP.
+
+-O middleware de logger é aplicado para registrar as requisições feitas à API.
+
+-As rotas são organizadas em duas partes principais: Usuários e Pets, com a possibilidade de adicionar mais funcionalidades, como autenticação e autorização, no futuro.
 
 Estrutura de Diretórios
 /src/controllers: Contém os manipuladores das requisições HTTP para usuários e pets.
