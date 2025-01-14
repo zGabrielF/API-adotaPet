@@ -16,15 +16,21 @@ Usuários:
 
 Pets:
 
-Cadastro de novos pets para adoção com nome, raça, cor, tamanho, sexo, idade e peso.
-Listagem de todos os pets disponíveis para adoção.
-Consulta detalhada de um pet específico.
-Atualização de informações de um pet.
-Exclusão de um pet.
+-Cadastro de novos pets para adoção com nome, raça, cor, tamanho, sexo, idade e peso.
 
-Segurança
-Hash de Senha: Utiliza o pacote bcrypt para garantir que as senhas dos usuários sejam armazenadas de forma segura, utilizando um hash seguro.
-Verificação de Senha: A verificação de senha é feita comparando o hash armazenado com a senha fornecida durante o login.
+-Listagem de todos os pets disponíveis para adoção.
+
+-Consulta detalhada de um pet específico.
+
+-Atualização de informações de um pet.
+
+-Exclusão de um pet.
+
+Segurança:
+
+-Hash de Senha: Utiliza o pacote bcrypt para garantir que as senhas dos usuários sejam armazenadas de forma segura, utilizando um hash seguro.
+
+-Verificação de Senha: A verificação de senha é feita comparando o hash armazenado com a senha fornecida durante o login.
 
 Roteamento e Autenticação
 As rotas da API são configuradas e organizadas de maneira modular, utilizando o pacote mux para roteamento.
@@ -42,8 +48,12 @@ Estrutura de Diretórios
 /src/seguranca: Implementação de hash e verificação de senha.
 
 Tecnologias Utilizadas
-Golang: A linguagem de programação principal para construção da API.
-MySQL: Banco de dados utilizado para armazenar as informações de usuários e pets.
-Gorilla Mux: Utilizado para o roteamento das requisições HTTP.
-Godotenv: Para carregar variáveis de ambiente do arquivo .env.
-bcrypt: Para segurança e hash de senhas dos usuários.
+-Golang: A linguagem de programação principal para construção da API.
+
+-MySQL: Banco de dados utilizado para armazenar as informações de usuários e pets.
+
+-Gorilla Mux: Utilizado para o roteamento das requisições HTTP.
+
+-Godotenv: Para carregar variáveis de ambiente do arquivo .env.
+
+-bcrypt: Para segurança e hash de senhas dos usuários.
