@@ -4,11 +4,11 @@ Este é um projeto de uma API REST desenvolvida em Golang para a gestão de ado�
 Funcionalidades
 Usuários:
 
-Cadastro de novos usuários com nome, apelido (nick), telefone e senha.
+-Cadastro de novos usuários com nome, apelido (nick), telefone e senha.
 Login de usuários, com verificação de senha.
-Busca de usuários por nome ou apelido (nick).
-Consulta detalhada de um usuário.
-Atualização e exclusão de usuários.
+-Busca de usuários por nome ou apelido (nick).
+-Consulta detalhada de um usuário.
+-Atualização e exclusão de usuários.
 
 Pets:
 
